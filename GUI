@@ -1,14 +1,10 @@
-package gui;
+import java.awt.event.ActionEvent;
 
-/**
- *
- * @author ryan.kopach580
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-public class GUI {
-
-    
-}
-package CS 
 
 
 import java.awt.Frame;
@@ -24,6 +20,18 @@ import java.awt.Font;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+ /**
+ * @author ryan.kopach580
+ */
+    
+
+/**
+ *
+ * @author ryan.kopach580
+ */
+
+
+
 
 public class GUI {
     private static Frame mainFrame;
@@ -31,78 +39,91 @@ public class GUI {
     private static Panel bottomPanel;
     private static Button button1;
     private static Button button2;
+    private static Button button3;
     private static Label instructionLabel;
     private static Label pushedButton1;
     private static Label pushedButton2;
     private static FlowLayout centeredText;
     private static Font labelFont;
-           
+
     public static void main(String args []){
         GUIMaker();
         eventHandlers();
     }//closes main
-    
-   
+
+
     public static void GUIMaker(){
-       
+
         mainFrame = new Frame("CS");
-        
-        
+
+
         mainFrame.setLayout(new BorderLayout());
 
-       
-        mainFrame.setSize(500,250);
+
+        mainFrame.setSize(1440,1080);
         
+        mainFrame.addWindowListener(new WindowAdapter() {
+          @Override
+          public void windowClosing(WindowEvent windowEvent){
+              System.exit(0);
+          }
+        })
         centeredText = new FlowLayout(FlowLayout.CENTER,35,35);
         topPanel = new Panel(centeredText);
         bottomPanel = new Panel(centeredText);
-        
-     
+
+
         mainFrame.add(topPanel, BorderLayout.NORTH);
         mainFrame.add(bottomPanel, BorderLayout.SOUTH);
-        
-       
-        button1 = new Button("Button 1");
-        button2 = new Button("Button 2");
-        Dimension buttonSize = new Dimension(175,55);
+
+
+        button1 = new Button("Find Match");
+        button2 = new Button("Inventory");
+        button3 = new Button("Server List");
+        Dimension buttonSize = new Dimension(300,95);
         button1.setPreferredSize(buttonSize);
         button2.setPreferredSize(buttonSize);
-        
-        
-        Font buttonFont = new Font("",Font.PLAIN, 30);
+        button3.setPreferredSize(buttonSize);
+
+
+        Font buttonFont = new Font("",Font.ITALIC, 55);
         button1.setFont(buttonFont);
         button2.setFont(buttonFont);
-        
-        
+        button3.setFont(labelFont);
+
+
         topPanel.add(button1);
         topPanel.add(button2);
-        
-        
-        instructionLabel = new Label("Push A Button");
-        pushedButton1 = new Label("You pushed Button 1");
-        pushedButton2 = new Label("You pushed Button 2");
-        
-        
+
+
+        instructionLabel = new Label("You toggled consol");
+        pushedButton1 = new Label("Match Starting");
+        pushedButton2 = new Label("Inventory opened");
+        Label pushedButton3 = new Label("Servers");
+
+
         bottomPanel.add(instructionLabel);
-        
-      
-        labelFont = new Font("",Font.PLAIN,25);
+
+
+        labelFont = new Font("",Font.ROMAN_BASELINE,75);
         instructionLabel.setFont(labelFont);
         pushedButton1.setFont(labelFont);
         pushedButton2.setFont(labelFont);
-        
-        
-        instructionLabel.setForeground(Color.GREEN);
-        pushedButton1.setForeground(Color.GREEN);
-        pushedButton2.setForeground(Color.GREEN);
-        
-       
+        pushedButton3.setFront(labelFront);
+
+
+        instructionLabel.setForeground(Color.RED);
+        pushedButton1.setForeground(Color.ORANGE);
+        pushedButton2.setForeground(Color.BLUE);
+        pushedButton3.setForeground(Color.Green);
+
+
         mainFrame.setVisible(true);
     }//Close GUIMaker
-    
-    
+
+
     public static void eventHandlers(){
-        
+
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -119,6 +140,6 @@ public class GUI {
                 mainFrame.setVisible(true);
             }
         });
-        
+
     }//close eventHandlers
 }//Glose GUI
