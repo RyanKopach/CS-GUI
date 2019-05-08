@@ -39,7 +39,6 @@ public class GUI {
     private static Panel bottomPanel;
     private static Button button1;
     private static Button button2;
-    private static Button button3;
     private static Label instructionLabel;
     private static Label pushedButton1;
     private static Label pushedButton2;
@@ -79,17 +78,15 @@ public class GUI {
 
         button1 = new Button("Find Match");
         button2 = new Button("Inventory");
-        button3 = new Button("Server List");
         Dimension buttonSize = new Dimension(300,95);
         button1.setPreferredSize(buttonSize);
         button2.setPreferredSize(buttonSize);
-        button3.setPreferredSize(buttonSize);
+        
 
 
         Font buttonFont = new Font("",Font.ITALIC, 55);
         button1.setFont(buttonFont);
         button2.setFont(buttonFont);
-        button3.setFont(labelFont);
 
 
         topPanel.add(button1);
@@ -99,7 +96,7 @@ public class GUI {
         instructionLabel = new Label("You toggled consol");
         pushedButton1 = new Label("Match Starting");
         pushedButton2 = new Label("Inventory opened");
-        Label pushedButton3 = new Label("Servers");
+       
 
 
         bottomPanel.add(instructionLabel);
@@ -109,13 +106,13 @@ public class GUI {
         instructionLabel.setFont(labelFont);
         pushedButton1.setFont(labelFont);
         pushedButton2.setFont(labelFont);
-        pushedButton3.setFront(labelFront);
+        
 
 
         instructionLabel.setForeground(Color.RED);
         pushedButton1.setForeground(Color.ORANGE);
         pushedButton2.setForeground(Color.BLUE);
-        pushedButton3.setForeground(Color.Green);
+       
 
 
         mainFrame.setVisible(true);
